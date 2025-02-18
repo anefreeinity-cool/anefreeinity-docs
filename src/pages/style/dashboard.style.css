@@ -1,0 +1,29 @@
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar main"
+    "footer footer";
+}
+
+nav {
+  top: 0;
+  position: sticky;
+  grid-area: navbar;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  height: calc(100vh - 8rem);
+  top: 8rem;
+  position: sticky;
+  align-self: start;
+  grid-area: sidebar;
+}
