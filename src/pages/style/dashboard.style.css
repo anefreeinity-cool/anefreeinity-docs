@@ -27,3 +27,23 @@ aside {
   align-self: start;
   grid-area: sidebar;
 }
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar"
+      "main"
+      "footer";
+  }
+
+  aside {
+    position: fixed;
+    width: 300px;
+    display: block;
+  }
+
+  .show {
+    display: block;
+  }
+}
