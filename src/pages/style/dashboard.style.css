@@ -8,6 +8,8 @@
     "navbar navbar"
     "sidebar main"
     "footer footer";
+  width: 100%;
+  box-sizing: border-box;
 }
 
 nav {
@@ -21,8 +23,8 @@ main {
 }
 
 aside {
-  height: calc(100vh - 8rem);
-  top: 8rem;
+  height: calc(100vh - 5.563rem);
+  top: 5.563rem;
   position: sticky;
   align-self: start;
   grid-area: sidebar;
@@ -40,10 +42,14 @@ aside {
   aside {
     position: fixed;
     width: 300px;
-    display: block;
+    display: none;
   }
 
   .show {
     display: block;
+  }
+
+  .hide {
+    display: none;
   }
 }

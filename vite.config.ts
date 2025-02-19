@@ -11,6 +11,6 @@ export default defineConfig({
       methods: ["GET", "POST", "PUT", "DELETE"],
       allowedHeaders: ["Content-Type"],
     },
-    allowedHosts: ["e08f-117-214-195-232.ngrok-free.app"],
+    allowedHosts: ["28be-117-214-194-103.ngrok-free.app"],
   },
 });
