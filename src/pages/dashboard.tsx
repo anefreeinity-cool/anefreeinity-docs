@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Body from "./body";
 import DASHBOARD_CONFIG from "./defaults/dashboard.config";
 import Footer from "./footer";
@@ -6,20 +7,19 @@ import SideBar from "./sidebar";
 import "./style/dashboard.style.css";
 
 const DashBoard: React.FC = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   return (
-    <div role="body" className="container">
-      <nav
-        className={`border z-10 border-black ${DASHBOARD_CONFIG.navHeight.class} bg-pink-500`}
-      >
-        <NavBar />
+    <div role="body" className="container bg-slate-800 text-gray-200">
+      <nav className={`z-10 ${DASHBOARD_CONFIG.navHeight.class}`}>
+        <NavBar setDrawerOpen={setIsDrawerOpen} />
       </nav>
-      <aside className={`border bg-red-600 border-black overflow-hidden`}>
+      <aside className={`overflow-hidden ${isDrawerOpen ? "show" : "hide"}`}>
         <SideBar />
       </aside>
-      <main className="border border-black">
+      <main>
         <Body />
       </main>
-      <footer className="border w-screen z-20 h-24 border-black bg-gray-900">
+      <footer className="w-screen z-20 h-24 bg-gray-900">
         <Footer />
       </footer>
     </div>

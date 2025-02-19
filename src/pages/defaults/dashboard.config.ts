@@ -1,7 +1,7 @@
 export const DASHBOARD_CONFIG = {
   navHeight: {
-    raw: "8rem",
-    class: "h-32",
+    raw: "5.563rem",
+    class: "h-[5.563rem]",
   },
 };
 
