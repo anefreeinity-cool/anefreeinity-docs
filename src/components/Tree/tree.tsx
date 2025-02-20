@@ -17,7 +17,7 @@ const Tree: React.FC = () => {
     const toggleExpand = (index: number) => {
         setExpandedItems((prev) => ({
             ...prev,
-            [index]: !prev[index], 
+            [index]: !prev[index],
         }));
     };
 
@@ -27,16 +27,16 @@ const Tree: React.FC = () => {
                 <ul>
                     {data.slidebar.map((item, index) => (
                         <li className="flex flex-col hover:bg-slate-600" key={index} >
-                            <a className="">{item.name}
+                            <div onClick={() => toggleExpand(index)} className="flex justify-between items-center">
+                                <a >{item.name}</a>
                                 {item.Children.length > 0 && (
                                     <button
-                                        onClick={() => toggleExpand(index)}
-                                        className="ml-4 flex-row items-center bg-white w-6 rounded-md text-black"
+                                        className="ml-2 text-white w-6 h-6 rounded-md flex items-center justify-center"
                                     >
                                         {expandedItems[index] ? "-" : "+"}
                                     </button>
                                 )}
-                            </a>
+                            </div>
                             {item.Children.length > 0 && expandedItems[index] && (
                                 <ul className="flex-row" >
                                     {item.Children.map((child: any, childIndex: number) => (
