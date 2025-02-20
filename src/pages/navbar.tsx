@@ -8,7 +8,7 @@ const NavBar: React.FC<INavBarProps> = ({ setDrawerOpen }) => {
       <div className="h-[63%] bg-slate-800"></div>
       <div className="h-[37%] bg-slate-900">
         <button
-          className="p-3 ml-2 my-auto bg-gray-700 rounded-xl"
+          className="p-3 ml-2 my-auto bg-gray-700 rounded-xl n"
           onClick={() => setDrawerOpen((prev) => !prev)}
         ></button>
       </div>
