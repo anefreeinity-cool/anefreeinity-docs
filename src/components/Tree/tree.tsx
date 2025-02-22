@@ -4,9 +4,9 @@ import { ITopicData } from "../../models/topic-data-model";
 
 const Tree: React.FC = () => {
   const [data, setData] = useState<ITopicData | null>(null);
-  const [expandedItems, setExpandedItems] = useState<{
-    [key: number]: boolean;
-  }>({});
+//   const [expandedItems, setExpandedItems] = useState<{
+//     [key: number]: boolean;
+//   }>({});
   const { topic, subtopic } = useParams();
   const navigate = useNavigate();
 
@@ -32,12 +32,12 @@ const Tree: React.FC = () => {
     data && !subtopic && navigate(`/${topic}/${data?.Children[0].name}`);
   }, [subtopic, data]);
 
-  const toggleExpand = (index: number) => {
-    setExpandedItems((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
+//   const toggleExpand = (index: number) => {
+//     setExpandedItems((prev) => ({
+//       ...prev,
+//       [index]: !prev[index],
+//     }));
+//   };
 
   return (
     <div className="p-2">
@@ -46,10 +46,14 @@ const Tree: React.FC = () => {
           {data.Children.map((item, index) => (
             <li className="flex flex-col hover:bg-slate-600" key={index}>
               <div
-                onClick={() => toggleExpand(index)}
+                //onClick={() => toggleExpand(index)}
+                onClick={() => {
+                    navigate(`/${topic}/${item.name}`);
+                    //toggleExpand(index);
+                }}
                 className="flex justify-between items-center"
               >
-                <a onClick={() => navigate(`/${topic}/${item.name}`)}>
+                <a >
                   {item.name}
                 </a>
                 {/* {item.Children.length > 0 && (
