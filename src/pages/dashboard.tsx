@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Body from "./body";
 import DASHBOARD_CONFIG from "./defaults/dashboard.config";
 import Footer from "./footer";
 import NavBar from "./navbar/navbar";

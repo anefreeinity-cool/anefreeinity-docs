@@ -1,15 +1,15 @@
 import Tree from "../components/Tree/tree";
+import "./style/scroll-bar.style.css";
 
 const SideBar: React.FC = () => {
   return (
-    <div 
-    className="h-full overflow-auto ">
+    <div className="custom-scrollbar h-full overflow-auto ">
       <Tree />
       <ul>
-    {Array.from({ length: 100 }, (_, i) => (
-      <li key={i}>{i}</li>
-    ))}
-  </ul>
+        {Array.from({ length: 100 }, (_, i) => (
+          <li key={i}>{i}</li>
+        ))}
+      </ul>
     </div>
   );
 };

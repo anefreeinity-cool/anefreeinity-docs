@@ -2,25 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar - No arrows */
-::-webkit-scrollbar {
-  width: 12px; /* Adjust width */
-}
-
-::-webkit-scrollbar-button {
-  display: none; /* Hides arrows (doesn't work in all browsers) */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 0px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #475569;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent; /* Slate track */
-  opacity: 0;
-}
