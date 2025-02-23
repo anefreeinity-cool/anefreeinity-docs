@@ -14,7 +14,7 @@ const DashBoard: React.FC = () => {
       <nav className={`z-10 ${DASHBOARD_CONFIG.navHeight.class}`}>
         <NavBar setDrawerOpen={setIsDrawerOpen} />
       </nav>
-      <aside className={`overflow-hidden bg-slate-900 ${isDrawerOpen ? "show" : "hide"}`}>
+      <aside className={`overflow-hidden ${isDrawerOpen ? "show" : "hide"}`}>
         <SideBar />
       </aside>
       <main>

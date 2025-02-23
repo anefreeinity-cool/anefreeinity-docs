@@ -54,12 +54,12 @@
       "Children": [
         {
           "id": 1,
-          "name": "C# standard library",
+          "name": "Cs standard library",
           "description": ""
         },
         {
           "id": 2,
-          "name": "C# syntax",
+          "name": "Cs syntax",
           "description": ""
         }
       ]

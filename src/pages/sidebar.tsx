@@ -3,7 +3,7 @@ import "./style/scroll-bar.style.css";
 
 const SideBar: React.FC = () => {
   return (
-    <div className="custom-scrollbar h-full overflow-auto ">
+    <div className="custom-scrollbar bg-slate-850 h-full overflow-auto ">
       <Tree />
       <ul>
         {Array.from({ length: 100 }, (_, i) => (
