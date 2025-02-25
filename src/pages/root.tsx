@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 import DashBoard from "./dashboard";
 import Body from "./body";
+import { useEffect } from "react";
+import { setMobileView } from "../store/utilities.store";
 
 const routes: RouteObject[] = [
   {
@@ -27,6 +29,17 @@ const routes: RouteObject[] = [
 const browserRouter = createBrowserRouter(routes);
 
 const Root: React.FC = () => {
+  useEffect(() => {
+    const handleResize = () => {
+      const mobileView = window.innerWidth < 769;
+      setMobileView(mobileView);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return <RouterProvider router={browserRouter} />;
 };
 

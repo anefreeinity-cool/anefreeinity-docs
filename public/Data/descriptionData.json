@@ -1,0 +1,29 @@
+{
+  "descriptions": [
+    {
+      "id": "01f264c6-373f-4c9d-9adb-f554586bd496",
+      "subTopicId": "ec2f2442-6208-48fd-9105-a3acf7f88ce6",
+      "description": "The C++ standard library also makes available the facilities of the C standard library, suitably adjusted to ensure static type safety. The descriptions of many library functions rely on the C standard library for the semantics of those functions. In some cases, the signatures specified in standard C++ may be different from the signatures in the C standard library, and additional overloads may be declared, but the behavior and the preconditions (including those implied by C's restrict)(since C++17) are the same unless otherwise stated. For compatibility with the C standard library, the C++ standard library provides the C headers listed below. The intended use of these headers is for interoperability only. It is possible that C++ source files need to include one of these headers in order to be valid ISO C. Source files that are not intended to also be valid ISO C should not use any of the C headers. See here for descriptions."
+    },
+    {
+      "id": "f3581d92-3de3-4dc9-a2cd-a94398c2c675",
+      "subTopicId": "4d5174c6-efd5-467e-9640-53d652463cda",
+      "description": "This C++ is syntax"
+    },
+    {
+      "id": "f1d72767-4169-4aae-824b-c82def8f8a2c",
+      "subTopicId": "33f20a98-bfe6-45e7-8e1d-865ccd65676a",
+      "description": "This is Python standard library description"
+    },
+    {
+      "id": "fc7ec51a-5769-40d0-a950-89067464ed09",
+      "subTopicId": "5766fa2f-7d0c-4eda-a9b9-d9638012d475",
+      "description": "Indentation refers to the spaces at the beginning of a code line. Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important. Python uses indentation to indicate a block of code."
+    },
+    {
+      "id": "e47fca47-3b32-49ac-b1e8-33ea45761afb",
+      "subTopicId": "8dde6b7d-2287-41fd-9ca8-be3c080a4878",
+      "description": "This is C++ loop"
+    }
+  ]
+}
