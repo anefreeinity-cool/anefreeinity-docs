@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ITopicData } from "../models/topic-data-model";
 import { ISubTopic } from "../models/subtopic-model";
+import useHandleResize from "../utilities/useHandleResize";
 
 const Body: React.FC = () => {
   const [data, setData] = useState<ISubTopic | null>(null);
   const { topic, subtopic } = useParams();
-
+  const isMobileView = useHandleResize();
   useEffect(() => {
     fetch("/Data/slidebarData.json")
       .then((res) => res.json())
@@ -25,9 +26,10 @@ const Body: React.FC = () => {
   }, [subtopic]);
   return (
     <div className="overflow-hidden">
+      <div>{isMobileView ? <p>Mobile View</p> : <p>Desktop View</p>}</div>
       {data ? (
         <p className="text-justify px-4 md:pl-24 md:pr-48 text-gray-300">
-          {data.description}
+          {data.description}    
         </p>
       ) : (
         <>
