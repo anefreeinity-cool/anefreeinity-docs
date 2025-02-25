@@ -1,5 +1,6 @@
 export interface ISubTopic {
-  id: number;
+  id: string;
+  topicId: string;
   name: string;
-  description: string;
+  childSubTopics: string[];
 }

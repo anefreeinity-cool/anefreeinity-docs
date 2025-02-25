@@ -1,10 +1,8 @@
 import NavOption from "./nav-option";
 
-interface INavBarProps {
-  setDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+interface INavBarProps {}
 
-const NavBar: React.FC<INavBarProps> = ({ setDrawerOpen }) => {
+const NavBar: React.FC<INavBarProps> = () => {
   return (
     <div className="flex flex-col h-full">
       <div className="h-[63%] bg-slate-800">
@@ -16,7 +14,7 @@ const NavBar: React.FC<INavBarProps> = ({ setDrawerOpen }) => {
           ></img>
         </div>
       </div>
-      <NavOption setDrawerOpen={setDrawerOpen} />
+      <NavOption />
     </div>
   );
 };

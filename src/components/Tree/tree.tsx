@@ -1,61 +1,59 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ITopicData } from "../../models/topic-data-model";
+import { ISubTopic } from "../../models/subtopic-model";
 
 const Tree: React.FC = () => {
-  const [data, setData] = useState<ITopicData | null>(null);
-//   const [expandedItems, setExpandedItems] = useState<{
-//     [key: number]: boolean;
-//   }>({});
+  const [data, setData] = useState<ISubTopic[]>([]);
+  //   const [expandedItems, setExpandedItems] = useState<{
+  //     [key: number]: boolean;
+  //   }>({});
   const { topic, subtopic } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/Data/slidebarData.json")
+    fetch("/Data/subTopicsData.json")
       .then((res) => res.json())
       .then((Data) => {
         if (!Data) throw new Error();
         if (!topic) {
-          navigate(`/${Data.sidebar[0].name}`);
+          navigate(`/${Data.subTopics[0].topicId}/${Data.subTopics[0].id}`);
         }
-        const currentTopic: ITopicData[] = Data.sidebar.filter(
-          (item: ITopicData) => item.name === topic
+        const currentTopics: ISubTopic[] = Data.subTopics.filter(
+          (item: ISubTopic) => item.topicId === topic
         );
-        setData(currentTopic[0]);
-        navigate(`/${topic}/${currentTopic[0].Children[0].name}`);
-        console.log(currentTopic);
+        setData(currentTopics);
+        navigate(`/${topic}/${currentTopics[0].id}`);
+        console.log(currentTopics);
       })
       .catch((error) => console.log(error));
   }, [topic]);
 
   useEffect(() => {
-    data && !subtopic && navigate(`/${topic}/${data?.Children[0].name}`);
+    data.length > 0 && !subtopic && navigate(`/${topic}/${data[0].id}`);
   }, [subtopic, data]);
 
-//   const toggleExpand = (index: number) => {
-//     setExpandedItems((prev) => ({
-//       ...prev,
-//       [index]: !prev[index],
-//     }));
-//   };
+  //   const toggleExpand = (index: number) => {
+  //     setExpandedItems((prev) => ({
+  //       ...prev,
+  //       [index]: !prev[index],
+  //     }));
+  //   };
 
   return (
     <div className="p-2">
-      {data ? (
+      {data.length > 0 ? (
         <ul>
-          {data.Children.map((item, index) => (
+          {data.map((item: ISubTopic, index) => (
             <li className="flex flex-col hover:bg-slate-600" key={index}>
               <div
                 //onClick={() => toggleExpand(index)}
                 onClick={() => {
-                    navigate(`/${topic}/${item.name}`);
-                    //toggleExpand(index);
+                  navigate(`/${topic}/${item.id}`);
+                  //toggleExpand(index);
                 }}
                 className="flex justify-between items-center"
               >
-                <a >
-                  {item.name}
-                </a>
+                <a>{item.name}</a>
                 {/* {item.Children.length > 0 && (
                   <button className="ml-2 text-white w-6 h-6 rounded-md flex items-center justify-center">
                     {expandedItems[index] ? "-" : "+"}
