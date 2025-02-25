@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MenuIcon from "../../assets/icons/menu";
 
 interface INavOptionProps {
   setDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,9 +27,11 @@ const NavOption: React.FC<INavOptionProps> = ({ setDrawerOpen }) => {
   return (
     <div className="h-[37%] bg-slate-900 flex items-center gap-2">
       <button
-        className="p-3 ml-2 my-auto bg-gray-700 rounded-xl n"
+        className="p-1 ml-2 my-auto bg-transparentl hover:bg-gray-700 rounded-sm n"
         onClick={() => setDrawerOpen((prev) => !prev)}
-      ></button>
+      >
+        <MenuIcon className="w-5 h-5 fill-white" />  
+      </button>
       <div className="flex items-center justify-between gap-2">
         {topics ? (
           topics.topics.map((item, index) => (
